@@ -1,0 +1,5 @@
+target("libwolv-hash")
+    set_kind("headeronly")
+    add_sysincludedirs("include", {public = true})
+    add_headerfiles("include/(**.hpp)")
+    add_deps("libwolv-types")
