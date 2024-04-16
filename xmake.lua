@@ -1,9 +1,22 @@
-set_languages("c++23")
+local PROJECT_NAME = "wolv"
+local PROJECT_VERSION = "0.1.0"
 
--- fail if using msvc and not using clang or gcc
-if is_plat("windows") and not is_kind("clang", "gcc") then
-    raise("Only clang and gcc are supported on Windows")
-end
+set_project(PROJECT_NAME)
+set_version(PROJECT_VERSION)
+
+target(PROJECT_NAME)
+    set_kind("static")
+    set_languages("cxx23")
+    on_config(function (target)
+        if is_plat("windows") and target:has_tool("cxx", "cl") then
+            raise("MSVC is not supported. Please use clang or gcc.")
+        end
+    end)
+
+-- xpack(PROJECT_NAME)
+--     set_version(PROJECT_VERSION)
+--     set_homepage("https://github.com/WerWolv/libwolv")
+--     set_description("The wolv package!!!")
 
 includes("libs/types/xmake.lua")
 includes("libs/utils/xmake.lua")
@@ -13,14 +26,3 @@ includes("libs/net/xmake.lua")
 includes("libs/containers/xmake.lua")
 includes("libs/math_eval/xmake.lua")
 includes("libs/testing/xmake.lua")
-
-target("libwolv")
-    set_kind("static")
-    add_deps("libwolv-types",
-             "libwolv-utils",
-             "libwolv-io",
-             "libwolv-hash",
-             "libwolv-net",
-             "libwolv-containers",
-             "libwolv-math_eval",
-             "libwolv-testing")

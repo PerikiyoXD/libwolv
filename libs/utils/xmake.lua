@@ -1,5 +1,4 @@
-target("libwolv-utils")
-    set_kind("shared")
+target("wolv") --utils")
     add_files("source/**.cpp")
     add_sysincludedirs("include", {public = true})
-    add_deps("libwolv-types")
+    

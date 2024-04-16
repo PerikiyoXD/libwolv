@@ -1,5 +1,4 @@
-target("libwolv-testing")
-    set_kind("static")
+target("wolv") --testing")
     add_sysincludedirs("include", {public = true})
     add_files("source/**.cpp")
-    add_deps("libwolv-utils")
+    

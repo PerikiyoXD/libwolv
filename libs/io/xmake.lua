@@ -1,5 +1,4 @@
-target("libwolv-io")
-    set_kind("static")
+target("wolv")
     add_sysincludedirs("include", {public = true})
     add_headerfiles("include/(**.hpp)")
 
@@ -10,9 +9,9 @@ target("libwolv-io")
         add_files("source/io/file_win.cpp")
     end
     if is_plat("macosx") then
-        --- TODO: Should add hardcoded SDK? YES? NO?
+-- TODO: Should add hardcoded SDK? YES? NO?
         add_files("source/io/fs_macos.m")
     end
     add_files("source/io/file.cpp", "source/io/fs.cpp")
 
-    add_deps("libwolv-utils")
+    
