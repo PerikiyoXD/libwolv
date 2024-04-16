@@ -517,8 +517,8 @@ namespace wolv::math_eval {
         }
     }
 
-    template class MathEvaluator<long double>;
-    template class MathEvaluator<i128>;
-    template class MathEvaluator<u128>;
+    // template class MathEvaluator<long double>;
+    // template class MathEvaluator<i128>;
+    // template class MathEvaluator<u128>;
 
 }

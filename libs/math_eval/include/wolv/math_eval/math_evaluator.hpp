@@ -120,8 +120,8 @@ namespace wolv::math_eval {
         std::optional<std::string> m_lastError;
     };
 
-    extern template class MathEvaluator<long double>;
-    extern template class MathEvaluator<i128>;
-    extern template class MathEvaluator<u128>;
+    // extern template class MathEvaluator<long double>;
+    // extern template class MathEvaluator<i128>;
+    // extern template class MathEvaluator<u128>;
 
 }
