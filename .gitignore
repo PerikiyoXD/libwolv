@@ -35,6 +35,8 @@ cmake-build-debug/
 
 .idea/
 .xmake/
+.cache/
+.vscode/
 
 # Build directory
 build/
