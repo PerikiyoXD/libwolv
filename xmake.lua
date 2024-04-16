@@ -6,18 +6,13 @@ set_version(PROJECT_VERSION)
 
 target(PROJECT_NAME)
     set_kind("static")
-    set_languages("cxx23")
+    set_languages("cxx23", "clatest")
     on_config(function (target)
         if is_plat("windows") and target:has_tool("cxx", "cl") then
             raise("MSVC is not supported. Please use clang or gcc.")
         end
     end)
-
--- xpack(PROJECT_NAME)
---     set_version(PROJECT_VERSION)
---     set_homepage("https://github.com/WerWolv/libwolv")
---     set_description("The wolv package!!!")
-
+    
 includes("libs/types/xmake.lua")
 includes("libs/utils/xmake.lua")
 includes("libs/io/xmake.lua")
